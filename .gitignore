@@ -68,3 +68,8 @@ temp/
 # Backup files
 *.bak
 *.backup
+
+# Local documentation (sensitive)
+.local-docs/
+local-docs/
+private-docs/
