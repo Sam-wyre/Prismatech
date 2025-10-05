@@ -1,0 +1,34 @@
+{
+  "name": "prismatech-landing",
+  "version": "1.0.0",
+  "description": "PrismaTech AI-powered web development platform - Landing page with waitlist",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx live-server --port=3000 --open=/index.html",
+    "build": "echo 'No build step needed for static site'",
+    "deploy": "netlify deploy --prod",
+    "deploy:staging": "netlify deploy",
+    "lint": "npx htmlhint *.html",
+    "format": "npx prettier --write *.html *.css *.js",
+    "test": "echo 'No tests configured yet'"
+  },
+  "keywords": [
+    "ai",
+    "web-development",
+    "no-code",
+    "waitlist",
+    "landing-page"
+  ],
+  "author": "PrismaTech Team",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "htmlhint": "^1.1.4",
+    "prettier": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/prismatech.git"
+  },
+  "homepage": "https://prismatech.ai"
+}
