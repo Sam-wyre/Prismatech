@@ -1,17 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#e67e22;stop-opacity:1" />
-    </linearGradient>
-  </defs>
+  <!-- Background -->
+  <rect width="32" height="32" fill="#000000"/>
   
-  <!-- Background circle -->
-  <circle cx="16" cy="16" r="15" fill="url(#grad1)" stroke="#2c3e50" stroke-width="1"/>
-  
-  <!-- Prism shape -->
-  <polygon points="16,6 24,14 16,22 8,14" fill="white" opacity="0.9"/>
-  
-  <!-- Play button inside -->
-  <polygon points="14,12 14,20 20,16" fill="#2c3e50"/>
+  <!-- PrismaTech Logo - 3D Prism -->
+  <g transform="translate(16,16)">
+    <!-- Main triangle outline -->
+    <polygon points="0,-10 8,6 -8,6" fill="none" stroke="#1a365d" stroke-width="1.5"/>
+    
+    <!-- Left facet (light blue) -->
+    <polygon points="0,-10 -8,6 0,6" fill="#3498db" stroke="#1a365d" stroke-width="0.8"/>
+    
+    <!-- Right facet (orange) -->
+    <polygon points="0,-10 8,6 0,6" fill="#e67e22" stroke="#1a365d" stroke-width="0.8"/>
+    
+    <!-- Center highlight facet (very light blue/white) -->
+    <polygon points="0,-10 0,6 -2,4" fill="#e3f2fd" stroke="#1a365d" stroke-width="0.5"/>
+    <polygon points="0,-10 0,6 2,4" fill="#f3e5f5" stroke="#1a365d" stroke-width="0.5"/>
+  </g>
 </svg>
