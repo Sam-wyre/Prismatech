@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrismaTech - Build Web Apps with AI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <div class="logo-icon">
+                        <div class="logo-facet top"></div>
+                        <div class="logo-facet left"></div>
+                        <div class="logo-facet right"></div>
+                        <div class="logo-play"></div>
+                    </div>
+                    <span class="logo-text">PrismaTech</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#download">Download</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="nav-cta" onclick="openWaitlistModal()">Join Waitlist</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Build Web Apps with <span class="highlight">AI Magic</span></h1>
+                    <p>Transform your ideas into stunning web applications with just a prompt. Connect your socials, handle SEO, and manage your entire digital presence - all in one powerful platform.</p>
+                    
+                    <div class="hero-cta">
+                        <button class="cta-button" onclick="openWaitlistModal()">
+                            <i class="fas fa-rocket"></i> Join the Waitlist
+                        </button>
+                        <div class="hero-stats">
+                            <div class="hero-stat">
+                                <span class="hero-stat-number" id="heroWaitlist">0</span>
+                                <span>Early users</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="platform-preview">
+                    <div class="preview-header">
+                        <div class="browser-dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <div class="preview-url">prismatech.ai/builder</div>
+                    </div>
+                    
+                    <div class="ai-prompt-demo">
+                        <input type="text" class="prompt-input typing-animation" 
+                               placeholder="Create a modern restaurant website with online booking..."
+                               readonly
+                               id="demoPrompt">
+                    </div>
+                    
+                    <div class="preview-result">
+                        <div class="result-header">
+                            <div class="result-title">✨ Generating your website...</div>
+                            <div class="live-indicator">
+                                <div class="live-dot"></div>
+                                <span>LIVE</span>
+                            </div>
+                        </div>
+                        
+                        <div class="preview-content">
+                            <div class="preview-block header"></div>
+                            <div class="preview-block sidebar"></div>
+                            <div class="preview-block content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="waitlistModal">
+            <button class="modal-close" onclick="closeWaitlistModal()">&times;</button>
+            
+            <div class="success-message" id="successMessage">
+                🎉 You're on the waitlist! We'll notify you when PrismaTech launches.
+            </div>
+            
+            <form id="waitlistForm">
+                <h3>Join the PrismaTech Waitlist</h3>
+                <p style="color: #666; margin-bottom: 25px; text-align: center;">Be the first to know when we launch!</p>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+                
+                <button type="submit" class="cta-button" style="width: 100%;">
+                    Join the Waitlist
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose PrismaTech?</h2>
+                <p>We're revolutionizing web development by making it accessible to everyone, regardless of technical expertise.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-Powered Creation</h3>
+                    <p>Describe your vision in plain English and watch our AI transform it into a beautiful, functional web application.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Social Integration</h3>
+                    <p>Seamlessly connect all your social media accounts and manage your online presence from one dashboard.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Built-in SEO</h3>
+                    <p>Get found on Google with our intelligent SEO optimization that works automatically in the background.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightning-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Go from idea to live website in minutes, not weeks. Perfect for entrepreneurs who move at the speed of light.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Optimized</h3>
+                    <p>Every app we create is fully responsive and optimized for all devices, ensuring great user experience everywhere.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Analytics & Insights</h3>
+                    <p>Track your success with detailed analytics and insights that help you grow your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How PrismaTech Works</h2>
+                <p>Building your dream web application has never been easier.</p>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Describe Your Vision</h3>
+                    <p>Tell our AI what you want to build using natural language prompts.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Generates Your App</h3>
+                    <p>Our intelligent system creates a customized web application based on your requirements.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Connect & Customize</h3>
+                    <p>Link your social accounts, fine-tune the design, and add your content.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Launch & Grow</h3>
+                    <p>Go live instantly and watch your business grow with built-in marketing tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat" data-count="1247">
+                    <span class="stat-number" id="waitlistCount">0</span>
+                    <div class="stat-label">People on Waitlist</div>
+                    <div class="stat-indicator">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>+0 today</span>
+                    </div>
+                </div>
+                <div class="stat" data-count="5">
+                    <span class="stat-number" id="buildTime">0</span>
+                    <div class="stat-label">Minutes Average Build Time</div>
+                    <div class="stat-pulse"></div>
+                </div>
+                <div class="stat" data-count="57">
+                    <span class="stat-number" id="integrations">0</span>
+                    <div class="stat-label">Integrations Available</div>
+                    <div class="integration-icons">
+                        <i class="fab fa-google pulse-icon" style="animation-delay: 0s;"></i>
+                        <i class="fab fa-facebook pulse-icon" style="animation-delay: 0.5s;"></i>
+                        <i class="fab fa-twitter pulse-icon" style="animation-delay: 1s;"></i>
+                    </div>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">
+                        <span class="time-display">
+                            <span id="hours">24</span>:<span id="minutes">7</span>
+                        </span>
+                    </span>
+                    <div class="stat-label">AI Assistant Support</div>
+                    <div class="availability-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download App Section -->
+    <section id="download" class="download-section">
+        <div class="container">
+            <div class="download-content">
+                <div class="download-text">
+                    <h2>Take PrismaTech Everywhere</h2>
+                    <p>Build and manage your web applications on the go with our mobile apps. Create, edit, and monitor your sites from anywhere in the world.</p>
+                </div>
+                
+                <div class="download-features">
+                    <div class="download-feature">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Mobile-first editing</span>
+                    </div>
+                    <div class="download-feature">
+                        <i class="fas fa-bell"></i>
+                        <span>Push notifications</span>
+                    </div>
+                    <div class="download-feature">
+                        <i class="fas fa-sync"></i>
+                        <span>Real-time sync</span>
+                    </div>
+                    <div class="download-feature">
+                        <i class="fas fa-cloud"></i>
+                        <span>Cloud backup</span>
+                    </div>
+                </div>
+
+                <div class="download-showcase">
+                    <div class="download-buttons">
+                        <a href="#" class="app-button large ios">
+                            <i class="fab fa-apple"></i>
+                            <div class="app-button-text">
+                                <span class="small">Download on the</span>
+                                <span class="large">App Store</span>
+                            </div>
+                        </a>
+                        
+                        <a href="#" class="app-button large android">
+                            <i class="fab fa-google-play"></i>
+                            <div class="app-button-text">
+                                <span class="small">GET IT ON</span>
+                                <span class="large">Google Play</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section contact">
+                    <h3>CONTACT</h3>
+                    <p><i class="fas fa-envelope"></i> support@prismatech.co.uk</p>
+                    
+                    <div class="social-links">
+                        <a href="https://twitter.com/prismatech_ai" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/prismatechai" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>COMPANY</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#how-it-works">How it works</a></li>
+                        <li><a href="#features">Features</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>LEGAL</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="acceptable-use-policy.html">Acceptable Use Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>SUPPORT</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 PrismaTech. Building the future of web development, one prompt at a time.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

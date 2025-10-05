@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - PrismaTech</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .faq-hero {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--dark-blue) 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        
+        .faq-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .faq-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .faq-content {
+            padding: 80px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            background: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+        
+        .faq-question h3 {
+            color: var(--dark-blue);
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        
+        .faq-icon {
+            color: var(--light-blue);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 25px 30px;
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .faq-answer ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        
+        .faq-answer li {
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        
+        .contact-section {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .contact-section h2 {
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+        }
+        
+        .contact-section p {
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+        
+        .back-to-home {
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .back-to-home a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--light-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .back-to-home a:hover {
+            color: var(--orange);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <div class="logo-icon">
+                        <div class="logo-facet top"></div>
+                        <div class="logo-facet left"></div>
+                        <div class="logo-facet right"></div>
+                        <div class="logo-play"></div>
+                    </div>
+                    <span class="logo-text">PrismaTech</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="nav-cta" onclick="openWaitlistModal()">Join Waitlist</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FAQ Hero -->
+    <section class="faq-hero">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about PrismaTech and our AI-powered web development platform.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="faq-content">
+        <div class="container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>What is PrismaTech?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>PrismaTech is an AI-powered platform that transforms natural language prompts into fully functional web applications. Simply describe what you want to build, and our AI creates a beautiful, responsive website for you in minutes.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>How does PrismaTech work?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our process is simple:</p>
+                    <ul>
+                        <li>Describe your vision in plain English</li>
+                        <li>Our AI analyzes your requirements</li>
+                        <li>We generate a customized web application</li>
+                        <li>You can customize and deploy your app</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>When will PrismaTech be available?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We're currently in development and building our waitlist. Join our waitlist to be the first to know when we launch and get early access to our platform.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Do I need coding experience to use PrismaTech?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>No coding experience required! PrismaTech is designed for everyone, from complete beginners to experienced developers. Our AI handles all the technical complexity, so you can focus on your ideas.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>What types of web applications can I create?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>You can create a wide variety of applications including:</p>
+                    <ul>
+                        <li>Business websites and landing pages</li>
+                        <li>E-commerce stores</li>
+                        <li>Portfolio websites</li>
+                        <li>Blogs and content sites</li>
+                        <li>SaaS applications</li>
+                        <li>Restaurant and service websites</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>How much will PrismaTech cost?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We're still finalizing our pricing structure. Join our waitlist to be the first to know about our launch pricing and special early adopter offers.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Can I customize the generated applications?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! While our AI creates the initial application, you'll have full control to customize colors, content, layout, and functionality to match your specific needs and brand.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Will my applications be mobile-friendly?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! All applications created with PrismaTech are fully responsive and optimized for mobile devices, tablets, and desktops.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>What about SEO and performance?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our AI automatically implements SEO best practices and performance optimizations, including fast loading times, proper meta tags, and search engine optimization.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Can I integrate with third-party services?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! PrismaTech supports integration with popular services like payment processors, email marketing tools, analytics platforms, and social media APIs.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Is there customer support available?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We provide comprehensive customer support including documentation, tutorials, and direct support via email. Our team is committed to helping you succeed.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>How do I join the waitlist?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Simply enter your email address in the waitlist form on our homepage. We'll notify you as soon as PrismaTech is ready for launch!</p>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <h2>Still have questions?</h2>
+                <p>Can't find the answer you're looking for? We're here to help!</p>
+                <a href="mailto:support@prismatech.co.uk" class="cta-button">
+                    <i class="fas fa-envelope"></i> Contact Support
+                </a>
+            </div>
+
+            <div class="back-to-home">
+                <a href="index.html">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section contact">
+                    <h3>CONTACT</h3>
+                    <p><i class="fas fa-envelope"></i> support@prismatech.co.uk</p>
+                    
+                    <div class="social-links">
+                        <a href="https://twitter.com/prismatech_ai" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/prismatechai" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>COMPANY</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#how-it-works">How it works</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>LEGAL</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="acceptable-use-policy.html">Acceptable Use Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>SUPPORT</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 PrismaTech. Building the future of web development, one prompt at a time.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Waitlist Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="waitlistModal">
+            <button class="modal-close" onclick="closeWaitlistModal()">&times;</button>
+            
+            <div class="success-message" id="successMessage">
+                🎉 You're on the waitlist! We'll notify you when PrismaTech launches.
+            </div>
+            
+            <form id="waitlistForm">
+                <h3>Join the PrismaTech Waitlist</h3>
+                <p style="color: #666; margin-bottom: 25px; text-align: center;">Be the first to know when we launch!</p>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+                
+                <button type="submit" class="cta-button" style="width: 100%;">
+                    Join the Waitlist
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.faq-icon');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-question').forEach(q => {
+                if (q !== element) {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ item
+            element.classList.toggle('active');
+            answer.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

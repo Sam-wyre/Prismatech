@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - PrismaTech</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--dark-blue) 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            padding: 80px 0;
+        }
+        
+        .about-section {
+            margin-bottom: 60px;
+        }
+        
+        .about-section h2 {
+            color: var(--dark-blue);
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+        }
+        
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+        
+        .team-member h3 {
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+        
+        .team-member .role {
+            color: var(--orange);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .value-card i {
+            font-size: 3rem;
+            color: var(--light-blue);
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+        
+        .back-to-home {
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .back-to-home a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--light-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .back-to-home a:hover {
+            color: var(--orange);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <div class="logo-icon">
+                        <div class="logo-facet top"></div>
+                        <div class="logo-facet left"></div>
+                        <div class="logo-facet right"></div>
+                        <div class="logo-play"></div>
+                    </div>
+                    <span class="logo-text">PrismaTech</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="index.html#download">Download</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="nav-cta" onclick="openWaitlistModal()">Join Waitlist</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About PrismaTech</h1>
+            <p>We're revolutionizing web development by making it accessible to everyone, regardless of technical expertise.</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-section">
+                <h2>Our Mission</h2>
+                <p>At PrismaTech, we believe that everyone should have the power to create stunning web applications without the complexity of traditional development. Our mission is to democratize web development by leveraging the power of artificial intelligence to transform simple prompts into fully functional, beautiful web applications.</p>
+                
+                <p>We're building a future where entrepreneurs, creators, and businesses can focus on their ideas rather than getting bogged down by technical barriers. With PrismaTech, your vision becomes reality in minutes, not months.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>Our Story</h2>
+                <p>PrismaTech was born from a simple observation: while technology has advanced rapidly, web development has remained complex and inaccessible to most people. We saw brilliant entrepreneurs with groundbreaking ideas struggling to bring their visions to life because they lacked technical expertise or resources.</p>
+                
+                <p>Our founders, experienced developers and AI researchers, set out to change this. After years of research and development, we created an AI-powered platform that understands natural language and transforms it into beautiful, functional web applications.</p>
+                
+                <p>Today, we're proud to be at the forefront of the no-code revolution, empowering thousands of creators to build the web applications of their dreams.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>Our Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Innovation</h3>
+                        <p>We constantly push the boundaries of what's possible with AI and web development, always seeking new ways to make creation easier and more powerful.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Accessibility</h3>
+                        <p>We believe technology should be accessible to everyone. Our platform is designed to be intuitive and powerful for users of all skill levels.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Speed</h3>
+                        <p>Time is precious. We're committed to helping you go from idea to live application in minutes, not weeks or months.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Quality</h3>
+                        <p>We don't compromise on quality. Every application created with PrismaTech is built with best practices, security, and performance in mind.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>Our Team</h2>
+                <p>PrismaTech is built by a diverse team of passionate developers, AI researchers, designers, and entrepreneurs who share a common vision: making web development accessible to everyone.</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--light-blue), var(--orange)); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">AS</div>
+                        <h3>Alex Smith</h3>
+                        <div class="role">CEO & Co-Founder</div>
+                        <p>Former Google engineer with 10+ years in AI and web development. Passionate about democratizing technology.</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), var(--light-blue)); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">MJ</div>
+                        <h3>Maria Johnson</h3>
+                        <div class="role">CTO & Co-Founder</div>
+                        <p>AI researcher and full-stack developer. Expert in machine learning and natural language processing.</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--dark-blue), var(--orange)); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">DC</div>
+                        <h3>David Chen</h3>
+                        <div class="role">Head of Design</div>
+                        <p>Creative director with a passion for beautiful, user-friendly interfaces. Former Apple design team member.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>Join Our Journey</h2>
+                <p>We're just getting started. As we continue to grow and evolve, we're looking for passionate individuals who share our vision of making web development accessible to everyone.</p>
+                
+                <p>Whether you're a developer, designer, marketer, or simply someone who believes in our mission, we'd love to hear from you. Join our waitlist to be the first to know about new features, job opportunities, and our journey ahead.</p>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <button class="cta-button" onclick="openWaitlistModal()">
+                        <i class="fas fa-rocket"></i> Join Our Waitlist
+                    </button>
+                </div>
+            </div>
+
+            <div class="back-to-home">
+                <a href="index.html">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section contact">
+                    <h3>CONTACT</h3>
+                    <p><i class="fas fa-envelope"></i> support@prismatech.co.uk</p>
+                    
+                    <div class="social-links">
+                        <a href="https://twitter.com/prismatech_ai" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/prismatechai" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>COMPANY</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#how-it-works">How it works</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>LEGAL</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="acceptable-use-policy.html">Acceptable Use Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>SUPPORT</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 PrismaTech. Building the future of web development, one prompt at a time.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Waitlist Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="waitlistModal">
+            <button class="modal-close" onclick="closeWaitlistModal()">&times;</button>
+            
+            <div class="success-message" id="successMessage">
+                🎉 You're on the waitlist! We'll notify you when PrismaTech launches.
+            </div>
+            
+            <form id="waitlistForm">
+                <h3>Join the PrismaTech Waitlist</h3>
+                <p style="color: #666; margin-bottom: 25px; text-align: center;">Be the first to know when we launch!</p>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+                
+                <button type="submit" class="cta-button" style="width: 100%;">
+                    Join the Waitlist
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
