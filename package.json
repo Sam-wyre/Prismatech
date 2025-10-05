@@ -1,7 +1,7 @@
 {
   "name": "prismatech-landing",
   "version": "1.0.0",
-  "description": "PrismaTech AI-powered web development platform - Landing page with waitlist",
+  "description": "PrismaTech AI-powered web development platform",
   "main": "index.html",
   "scripts": {
     "dev": "npx live-server --port=3000 --open=/index.html",
@@ -16,11 +16,10 @@
     "ai",
     "web-development",
     "no-code",
-    "waitlist",
-    "landing-page"
+    "automation"
   ],
   "author": "PrismaTech Team",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "devDependencies": {
     "live-server": "^1.2.2",
     "htmlhint": "^1.1.4",
