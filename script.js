@@ -112,18 +112,13 @@ function animateTimeDisplay() {
 
 // Mobile Menu Functions
 function toggleMobileMenu() {
-    console.log('toggleMobileMenu called'); // Debug log
     const navMenu = document.getElementById('navMenu');
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
     
-    console.log('Elements found:', { navMenu, mobileMenuToggle, mobileMenuOverlay }); // Debug log
-    
     navMenu.classList.toggle('active');
     mobileMenuToggle.classList.toggle('active');
     mobileMenuOverlay.classList.toggle('active');
-    
-    console.log('Classes toggled, navMenu has active:', navMenu.classList.contains('active')); // Debug log
     
     // Prevent body scroll when menu is open
     if (navMenu.classList.contains('active')) {

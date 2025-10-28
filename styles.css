@@ -289,6 +289,47 @@
             .features-grid, .steps {
                 grid-template-columns: 1fr;
             }
+
+            /* Platform Preview Mobile Styles */
+            .platform-preview {
+                padding: 20px;
+                margin: 20px 0;
+            }
+
+            .preview-header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .preview-url {
+                font-size: 0.8rem;
+            }
+
+            .ai-prompt-demo {
+                padding: 15px;
+            }
+
+            .prompt-input {
+                font-size: 14px;
+            }
+
+            .preview-result {
+                padding: 15px;
+            }
+
+            .preview-content {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .preview-block {
+                height: 50px;
+            }
+
+            .preview-block.header {
+                grid-column: 1;
+            }
         }
 
         body {
