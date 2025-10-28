@@ -110,6 +110,45 @@ function animateTimeDisplay() {
   }, 1000);
 }
 
+// Mobile Menu Functions
+function toggleMobileMenu() {
+    const navMenu = document.getElementById('navMenu');
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    
+    navMenu.classList.toggle('active');
+    mobileMenuToggle.classList.toggle('active');
+    mobileMenuOverlay.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    if (navMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
+}
+
+function closeMobileMenu() {
+    const navMenu = document.getElementById('navMenu');
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    
+    navMenu.classList.remove('active');
+    mobileMenuToggle.classList.remove('active');
+    mobileMenuOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close mobile menu when clicking on menu links
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuLinks = document.querySelectorAll('.nav-menu a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    });
+});
+
 // Initialize all animations when page loads
 document.addEventListener('DOMContentLoaded', function () {
     // Start typing animation

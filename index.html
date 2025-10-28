@@ -30,7 +30,7 @@
                     </div>
                     <span class="logo-text">PrismaTech</span>
                 </div>
-                <ul class="nav-menu">
+                <ul class="nav-menu" id="navMenu">
                     <li><a href="about.html">About</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
@@ -38,9 +38,17 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <button class="nav-cta" onclick="openWaitlistModal()">Join Waitlist</button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu()"></div>
 
     <!-- Hero Section -->
     <section class="hero">
