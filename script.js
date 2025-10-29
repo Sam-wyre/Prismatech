@@ -1,3 +1,46 @@
+// Error handling for external scripts and browser extensions
+window.addEventListener('error', function(e) {
+    // Suppress known external script errors that don't affect functionality
+    const suppressedErrors = [
+        'main.3bb275d6.js',
+        '9484219.js',
+        'hs-banner.com',
+        'masterschool.com',
+        'chrome-extension://',
+        'ERR_BLOCKED_BY_CLIENT',
+        'ERR_FILE_NOT_FOUND'
+    ];
+    
+    const errorMessage = e.message || e.filename || '';
+    const shouldSuppress = suppressedErrors.some(error => errorMessage.includes(error));
+    
+    if (shouldSuppress) {
+        e.preventDefault();
+        return false;
+    }
+});
+
+// Suppress console warnings for known external issues
+const originalConsoleError = console.error;
+console.error = function(...args) {
+    const message = args.join(' ');
+    const suppressedMessages = [
+        'postMessage',
+        'masterschool.com',
+        'hs-banner.com',
+        'chrome-extension',
+        'ERR_BLOCKED_BY_CLIENT',
+        'ERR_FILE_NOT_FOUND',
+        'permissions policy violation'
+    ];
+    
+    const shouldSuppress = suppressedMessages.some(msg => message.includes(msg));
+    
+    if (!shouldSuppress) {
+        originalConsoleError.apply(console, args);
+    }
+};
+
 // Demo typing animation
 function startTypingDemo() {
   const prompts = [
