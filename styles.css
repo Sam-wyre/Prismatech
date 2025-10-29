@@ -188,10 +188,10 @@
             transform: rotate(-45deg) translate(6px, -6px);
         }
 
-        /* Mobile Navigation */
-        @media (max-width: 768px) {
+        /* Mobile Navigation - Cross Browser Compatible */
+        @media screen and (max-width: 768px) {
             .mobile-menu-toggle {
-                display: flex;
+                display: flex !important;
             }
             
             .nav-menu {
@@ -249,8 +249,16 @@
                 font-size: 1.3rem;
             }
             
+            /* Force hide Join Waitlist button on mobile - Cross Browser */
             .nav-cta {
-                display: none;
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                height: 0 !important;
+                width: 0 !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                overflow: hidden !important;
             }
 
             /* Mobile menu overlay */
@@ -272,20 +280,19 @@
                 visibility: visible;
             }
 
-            /* Additional mobile styles */
+            /* Hero Content - Use Flexbox for Better Browser Support */
             .hero-content {
-                display: grid !important;
-                grid-template-columns: 1fr !important;
-                gap: 40px;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 40px !important;
                 text-align: center;
                 padding: 20px 0;
-                align-items: stretch;
             }
 
             .hero-text {
-                grid-column: 1;
-                grid-row: 1;
-                order: 1;
+                order: 1 !important;
+                width: 100% !important;
             }
 
             .hero-text h1 {
@@ -320,7 +327,7 @@
                 grid-template-columns: 1fr;
             }
 
-            /* Platform Preview Mobile Styles */
+            /* Platform Preview Mobile Styles - Force Below Hero */
             .platform-preview {
                 padding: 15px;
                 margin: 0;
@@ -329,9 +336,8 @@
                 box-sizing: border-box;
                 overflow: visible;
                 position: relative;
-                grid-column: 1;
-                grid-row: 2;
-                order: 2;
+                order: 2 !important;
+                display: block !important;
             }
 
             .preview-header {
@@ -400,8 +406,34 @@
             }
         }
 
-        /* Extra small mobile screens */
-        @media (max-width: 480px) {
+        /* Chrome-specific mobile fixes */
+        @media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 0) {
+            .nav-cta {
+                display: none !important;
+                visibility: hidden !important;
+            }
+            
+            .hero-content {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+        }
+
+        /* Safari-specific mobile fixes */
+        @media screen and (max-width: 768px) and (-webkit-appearance: none) {
+            .hero-content {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            
+            .platform-preview {
+                order: 2 !important;
+                margin-top: 40px !important;
+            }
+        }
+
+        /* Extra small mobile screens - Cross Browser Compatible */
+        @media screen and (max-width: 480px) {
             .hero-text h1 {
                 font-size: 1.8rem;
             }
@@ -413,9 +445,8 @@
             .platform-preview {
                 padding: 10px;
                 margin: 0;
-                grid-column: 1;
-                grid-row: 2;
-                order: 2;
+                order: 2 !important;
+                display: block !important;
             }
 
             .preview-url {
@@ -449,6 +480,12 @@
 
             .container {
                 padding: 0 15px;
+            }
+
+            /* Force hide Join Waitlist button on very small screens */
+            .nav-cta {
+                display: none !important;
+                visibility: hidden !important;
             }
         }
 
