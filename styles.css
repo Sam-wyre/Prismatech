@@ -274,11 +274,18 @@
 
             /* Additional mobile styles */
             .hero-content {
-                grid-template-columns: 1fr;
+                display: grid !important;
+                grid-template-columns: 1fr !important;
                 gap: 40px;
                 text-align: center;
                 padding: 20px 0;
                 align-items: stretch;
+            }
+
+            .hero-text {
+                grid-column: 1;
+                grid-row: 1;
+                order: 1;
             }
 
             .hero-text h1 {
@@ -322,6 +329,9 @@
                 box-sizing: border-box;
                 overflow: visible;
                 position: relative;
+                grid-column: 1;
+                grid-row: 2;
+                order: 2;
             }
 
             .preview-header {
@@ -403,6 +413,9 @@
             .platform-preview {
                 padding: 10px;
                 margin: 0;
+                grid-column: 1;
+                grid-row: 2;
+                order: 2;
             }
 
             .preview-url {
