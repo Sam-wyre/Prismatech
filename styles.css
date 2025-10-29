@@ -241,6 +241,8 @@
             
             .nav-content {
                 justify-content: space-between;
+                padding: 15px 0;
+                gap: 15px;
             }
             
             .logo-text {
@@ -248,8 +250,7 @@
             }
             
             .nav-cta {
-                padding: 10px 20px;
-                font-size: 0.9rem;
+                display: none;
             }
 
             /* Mobile menu overlay */
@@ -274,12 +275,19 @@
             /* Additional mobile styles */
             .hero-content {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 30px;
                 text-align: center;
+                padding: 20px 0;
             }
 
             .hero-text h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+                margin-bottom: 20px;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+                margin-bottom: 30px;
             }
 
             .waitlist-form {
@@ -292,43 +300,95 @@
 
             /* Platform Preview Mobile Styles */
             .platform-preview {
-                padding: 20px;
+                padding: 15px;
                 margin: 20px 0;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
             }
 
             .preview-header {
                 flex-direction: column;
-                gap: 10px;
+                gap: 8px;
                 text-align: center;
+                margin-bottom: 15px;
             }
 
             .preview-url {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
+                word-break: break-all;
             }
 
             .ai-prompt-demo {
-                padding: 15px;
+                padding: 12px;
+                margin-bottom: 15px;
             }
 
             .prompt-input {
-                font-size: 14px;
+                font-size: 13px;
+                padding: 8px;
             }
 
             .preview-result {
-                padding: 15px;
+                padding: 12px;
+            }
+
+            .result-header {
+                margin-bottom: 10px;
+            }
+
+            .result-title {
+                font-size: 0.9rem;
             }
 
             .preview-content {
                 grid-template-columns: 1fr;
-                gap: 8px;
+                gap: 6px;
             }
 
             .preview-block {
-                height: 50px;
+                height: 40px;
             }
 
             .preview-block.header {
                 grid-column: 1;
+                height: 35px;
+            }
+        }
+
+        /* Extra small mobile screens */
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .platform-preview {
+                padding: 10px;
+                margin: 15px 0;
+            }
+
+            .preview-url {
+                font-size: 0.7rem;
+            }
+
+            .prompt-input {
+                font-size: 12px;
+            }
+
+            .preview-block {
+                height: 35px;
+            }
+
+            .preview-block.header {
+                height: 30px;
+            }
+
+            .container {
+                padding: 0 15px;
             }
         }
 
